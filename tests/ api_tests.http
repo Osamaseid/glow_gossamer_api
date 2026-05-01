@@ -1,0 +1,69 @@
+### Dry Skin — Aging, Intensity 2
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Dry",
+  "primary_concern": "Aging",
+  "intensity": 2
+}
+
+###
+
+### Oily Skin — Acne, Intensity 3
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Oily",
+  "primary_concern": "Acne",
+  "intensity": 3
+}
+
+###
+
+### Sensitive Skin — Redness, Intensity 1
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Sensitive",
+  "primary_concern": "Redness",
+  "intensity": 1
+}
+
+###
+
+### Combination Skin — Dehydration, Intensity 2
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Combination",
+  "primary_concern": "Dehydration",
+  "intensity": 2
+}
+
+###
+
+### Validation Error — invalid intensity (expect 422)
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Dry",
+  "primary_concern": "Aging",
+  "intensity": 5
+}
+
+###
+
+### Validation Error — invalid skin_type (expect 422)
+POST http://127.0.0.1:8000/formulate
+Content-Type: application/json
+
+{
+  "skin_type": "Normal",
+  "primary_concern": "Aging",
+  "intensity": 1
+}
